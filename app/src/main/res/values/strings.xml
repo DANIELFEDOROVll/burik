@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Buryk v1.0</string>
+    <string name="welcome">Добро пожаловать в Buryk! Войдите или зарегестрируйтесь.</string>
+    <string name="login">Логин</string>
+    <string name="pass">Пароль</string>
+    <string name="entrace">Войти</string>
+    <string name="register">Зарегестрироваться</string>
+    <string name="name">Имя</string>
+    <string name="fam">Фамилия</string>
+    <string name="repeatPass">Повторите пароль</string>
+
+    <string name="emptyPole">Некоторые поля не заполнены</string>
+    <string name="nonRpass">Пароли не совпадают</string>
+    
+    <string name="exist">Пользователь с таким логином уже существует!</string>
+    <string name="bukv6">Пароль должен содержать не менее 6 букв</string>
+    <string name="ujesushestvuet">Аккаунт с таким логином уже существует!</string>
+    <string name="nevernlog">Неверный логин или пароль</string>
+    <string name="back">Выйти</string>
+</resources>
