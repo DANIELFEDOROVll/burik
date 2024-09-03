@@ -26,8 +26,12 @@ class ActivityProfile : AppCompatActivity() {
     var A = 0
 
     lateinit var bc: ActivityProfileBinding
+
     private val adapter = ElementAdapter()
-    private val imageID = listOf(R.drawable.rrr, R.drawable.pn2, R.drawable.one1)
+
+    private val imageID = listOf(R.drawable.rrr, R.drawable.pn2, R.drawable.one1, 0)
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,8 +55,8 @@ class ActivityProfile : AppCompatActivity() {
             rcView.layoutManager = LinearLayoutManager(this@ActivityProfile)
             rcView.adapter = adapter
 
-            for(i in 0 until 3){
-                var elem = Element(imageID[i], "элемент $i")
+            for(i in 0 until 4){
+                var elem = Element(imageID[i], dt.serviceList[i])
                 adapter.addElement(elem)
             }
 

@@ -17,4 +17,5 @@
     <string name="ujesushestvuet">Аккаунт с таким логином уже существует!</string>
     <string name="nevernlog">Неверный логин или пароль</string>
     <string name="back">Выйти</string>
+
 </resources>

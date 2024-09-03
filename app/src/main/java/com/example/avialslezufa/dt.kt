@@ -19,4 +19,10 @@ object dt {
     // ключ для передачи данных пользователя с mainActivity в ProfileActivity
     val keyData = "keydata"
     val keyData_code = 102
+
+    // список названий и цен услуг
+    val serviceList = listOf<String>("Рабочая сила\n 5000 р/сутки",
+        "Техника\n 10 000 р/сутки",
+        "Поиск места \n бесплатно",
+        "У вас нет особых предложений")
 }

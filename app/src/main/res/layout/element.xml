@@ -9,10 +9,10 @@
     <androidx.cardview.widget.CardView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#CF0000"
+        android:background="#FFFFFF"
         android:onClick="clickCardView"
         android:padding="3dp"
-        app:cardBackgroundColor="#D62E2E"
+        app:cardBackgroundColor="#CFCACA"
         app:cardCornerRadius="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
