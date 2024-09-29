@@ -27,8 +27,8 @@ class MainActivity : AppCompatActivity() {
         bc = ActivityMainBinding.inflate(layoutInflater)
         setContentView(bc.root)
 
-        pref = getSharedPreferences("TABLE2", Context.MODE_PRIVATE)
-        pref2 = getSharedPreferences("HAVEENTRACE1", Context.MODE_PRIVATE)
+        pref = getSharedPreferences("TABLE2", Context.MODE_PRIVATE) //таблица для хранения инф о пользователях
+        pref2 = getSharedPreferences("HAVEENTRACE1", Context.MODE_PRIVATE) //хранение инф о вошедшем пользователе
 
         entraceOnThisPhone = pref2?.getInt("bool", 0)!!
 
@@ -60,7 +60,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun onActivity2(view: View){
+    fun onActivity2(view: View){ //кнопка регистрации
         var intent = Intent(this, Activity2::class.java)
         intent.putExtra(dt.key1, bc.editTextLogin.text.toString())
         startActivityForResult(intent, dt.key1_code)

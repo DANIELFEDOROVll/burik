@@ -18,6 +18,8 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 class ActivityProfile : AppCompatActivity() {
     var pref: SharedPreferences? = null
@@ -38,7 +40,11 @@ class ActivityProfile : AppCompatActivity() {
         bc = ActivityProfileBinding.inflate(layoutInflater)
         setContentView(bc.root)
 
-
+        //Retrofit2
+        val retrofit = Retrofit.Builder()
+            .baseUrl("")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
 
         pref = getSharedPreferences("TABLE2", Context.MODE_PRIVATE)
         pref2 = getSharedPreferences("HAVEENTRACE1", Context.MODE_PRIVATE)
