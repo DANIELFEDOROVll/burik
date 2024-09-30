@@ -13,8 +13,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.avialslezufa.databinding.ActivityProfileBinding
 import com.example.avialslezufa.recyclerview.Element
 import com.example.avialslezufa.recyclerview.ElementAdapter
+import com.example.avialslezufa.retrofit.ApiClass
 import dataBase.User
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
@@ -42,7 +42,15 @@ class ActivityProfile : AppCompatActivity() {
         bc = ActivityProfileBinding.inflate(layoutInflater)
         setContentView(bc.root)
 
+        val retrofit = Retrofit.Builder()
+            .baseUrl("https://github.com/DANIELFEDOROVll/burik/blob/main/app/src/main/java/com/example/avialslezufa")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
 
+
+        val apiService = retrofit.create(ApiClass::class.java)
+
+        val call = apiService.getInf()
 
         pref = getSharedPreferences("TABLE2", Context.MODE_PRIVATE)
         pref2 = getSharedPreferences("HAVEENTRACE1", Context.MODE_PRIVATE)
