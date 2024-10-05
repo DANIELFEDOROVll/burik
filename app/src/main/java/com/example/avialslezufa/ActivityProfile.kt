@@ -8,18 +8,22 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.view.WindowInsetsAnimation
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.avialslezufa.databinding.ActivityProfileBinding
 import com.example.avialslezufa.recyclerview.Element
 import com.example.avialslezufa.recyclerview.ElementAdapter
 import com.example.avialslezufa.retrofit.ApiClass
+import com.example.avialslezufa.retrofit.Service
 import dataBase.User
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import kotlinx.coroutines.*
+
 
 class ActivityProfile : AppCompatActivity() {
     //update---------
@@ -35,25 +39,28 @@ class ActivityProfile : AppCompatActivity() {
 
     private val imageID = listOf(R.drawable.rrr, R.drawable.pn2, R.drawable.one1, 0)
 
-
+    private val coroutineScope1 = CoroutineScope(Dispatchers.Main + SupervisorJob())
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bc = ActivityProfileBinding.inflate(layoutInflater)
         setContentView(bc.root)
 
-        val retrofit = Retrofit.Builder()
-            .baseUrl("https://github.com/DANIELFEDOROVll/burik/blob/main/app/src/main/java/com/example/avialslezufa")
+        /*val retrofit = Retrofit.Builder()
+            .baseUrl("https://www.dropbox.com/scl/fi/yxrh65lmyj4fy2vvprw2o/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
-
-
+        
         val apiService = retrofit.create(ApiClass::class.java)
+        Log.i("logone", "privet1")
 
-        val call = apiService.getInf()
+       GlobalScope.launch {
+            val call = apiService.getInf()
+        } */
 
-        pref = getSharedPreferences("TABLE2", Context.MODE_PRIVATE)
-        pref2 = getSharedPreferences("HAVEENTRACE1", Context.MODE_PRIVATE)
+
+        pref = getSharedPreferences("TABLE2", MODE_PRIVATE)
+        pref2 = getSharedPreferences("HAVEENTRACE1", MODE_PRIVATE)
 
         var nowUser = getDates(intent.getStringExtra(dt.keyData)!!)
 
@@ -61,6 +68,7 @@ class ActivityProfile : AppCompatActivity() {
 
         init()
     }
+
 
     private fun init(){
         bc.apply {
@@ -96,7 +104,9 @@ class ActivityProfile : AppCompatActivity() {
     }
 
     fun toSite(view: View){
-        val url = "https://eutcf.tb.ru"
+        //val url = "https://eutcf.tb.ru"
+        //val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+        val url = "https://github.com/DANIELFEDOROVll/burik/blob/main/services.json"
         val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
         startActivity(browserIntent)
     }
